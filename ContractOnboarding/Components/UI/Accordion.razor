@@ -1,0 +1,39 @@
+@namespace ContractOnboarding.Components.UI
+
+<div class="accordion-item">
+    <!-- Cabecera -->
+    <button class="accordion-header" @onclick="Toggle">
+        <span class="typo-accordion-title">@Title</span>
+        
+        <!-- Icono Chevron (SVG Inline) -->
+        <!-- La clase 'rotate' se activará cuando _isOpen sea true -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+             class="chevron @(_isOpen ? "rotate" : "")">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </button>
+
+    <!-- Contenido: Solo se renderiza si está abierto -->
+    @if (_isOpen)
+    {
+        <div class="accordion-content">
+            <div class="content-padding">
+                @ChildContent
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    // Título del acordeón
+    [Parameter] public string Title { get; set; } = "Overview";
+    
+    // Contenido interno
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    // Estado interno para controlar si está abierto o cerrado
+    private bool _isOpen = false;
+
+    // Método para alternar el estado
+    private void Toggle() => _isOpen = !_isOpen;
+}

@@ -1,0 +1,61 @@
+.accordion-item {
+    background: var(--primary-surface); 
+    border: 1px solid transparent; 
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 8px; 
+    
+    /* Transiciones suaves */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+}
+
+/* EFECTO HOVER */
+.accordion-item:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+    transform: translateY(-3px); 
+}
+
+/* Cabecera */
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem; 
+    background-color: var(--primary-surface);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Hover Cabecera acordeón */
+.accordion-header:hover {
+    background-color: #fcfcfc;
+}
+
+/* Icono de flecha */
+.chevron {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Efecto rebote "bouncy" */
+    stroke: var(--accent-imp);
+}
+
+.chevron.rotate {
+    transform: rotate(180deg);
+}
+
+/* Contenido */
+.accordion-content {
+    background-color: var(--primary-surface);
+    border-top: 1px solid var(--border-color); 
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+.content-padding {
+    padding: 24px;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

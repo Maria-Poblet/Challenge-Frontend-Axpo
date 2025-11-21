@@ -1,0 +1,92 @@
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FAFAFA;
+    margin: 0; padding: 0;
+    color: #3D3D3D;
+}
+
+:root {
+    --text-highlight: #1F1F1F;
+    --text-primary: #3D3D3D;
+    --border-color: #eaeaea;
+    --primary-surface: white; 
+    --border-h: #e8e8e8;
+    --gradient-jazzy: linear-gradient(90deg, #ffe748 0%, #ff4e4e 50%, #443FCA 100%);
+    --accent-imp: #443FCA;
+}
+
+.main-container {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    padding: 96px 24px 24px 24px;
+}
+
+/* Layout Flex para columnas */
+.flex-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; 
+}
+
+.flex-item { width: 100%; }
+
+@media (min-width: 1200px) {
+    .flex-item { width: calc(50% - 0.75rem); }
+}
+
+/* Tipografías */
+.typo-header {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300; 
+    line-height: 110%; 
+    letter-spacing: -0.36px;
+    color: var(--text-highlight);
+}
+.typo-section-title {
+    font-family: "Open Sans", sans-serif;;
+    font-size: 20px; font-weight: 700; line-height: 120%; letter-spacing: -0.2px;
+    color: var(--text-primary);
+}
+.typo-accordion-title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px; font-weight: 700; color: var(--text-primary);
+}
+.typo-body-bold {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px; font-weight: 700; line-height: 24px; letter-spacing: -0.14px;
+    color: var(--text-primary);
+}
+.typo-body-reg {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px; font-weight: 400; line-height: 24px; letter-spacing: -0.14px;
+    color: var(--text-primary);
+}
+.text-truncate {
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    display: block; max-width: 100%;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* animación a los items flexibles */
+.flex-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.flex-item:nth-child(1) { animation-delay: 0.1s; }
+.flex-item:nth-child(2) { animation-delay: 0.2s; }
+.flex-item:nth-child(3) { animation-delay: 0.3s; }
+.flex-item:nth-child(4) { animation-delay: 0.4s; }

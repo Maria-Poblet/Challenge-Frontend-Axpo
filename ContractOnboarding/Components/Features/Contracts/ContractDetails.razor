@@ -1,0 +1,49 @@
+@using ContractOnboarding.Models
+@namespace ContractOnboarding.Components.Features.Contracts
+
+<div class="details-flex">
+    <!-- Campo: Contract Type (Marcado como importanto) -->
+    <div class="field">
+        <label class="typo-body-bold">Contract Type</label>
+        <div class="badge-container">
+            <span class="status-badge" title="@Contract.ContractType">
+                @Contract.ContractType
+            </span>
+        </div>
+    </div>
+
+    <!-- Campo: Commodity -->
+    <div class="field">
+        <label class="typo-body-bold">Commodity</label>
+        <span class="typo-body-reg">@Contract.Commodity</span>
+    </div>
+
+    <!-- Campo: Country (Icono) -->
+    <div class="field">
+        <label class="typo-body-bold">Country</label>
+        <div style="display:flex; align-items:center; gap:8px;">
+            <svg width="24" height="18" viewBox="0 0 3 2" style="flex-shrink:0; border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+                <rect width="1" height="2" x="0" fill="#0055A4"/>
+                <rect width="1" height="2" x="1" fill="#FFFFFF"/>
+                <rect width="1" height="2" x="2" fill="#EF4135"/>
+            </svg> 
+            <span class="typo-body-reg" style="font-weight:600;">@Contract.Country</span>
+        </div>
+    </div>
+
+    <!-- Campo: Signature Date -->
+    <div class="field">
+        <label class="typo-body-bold">Signature Date</label>
+        <span class="typo-body-reg">@Contract.SignatureDate.ToString("dd/MM/yyyy")</span>
+    </div>
+
+    <!-- Campo: Period -->
+    <div class="field full-width">
+        <label class="typo-body-bold">Period</label>
+        <span class="typo-body-reg">@Contract.GetFormattedPeriod()</span>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public Contract Contract { get; set; } = default!;
+}

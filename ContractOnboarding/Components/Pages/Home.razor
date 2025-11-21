@@ -1,0 +1,55 @@
+﻿@page "/"
+@inject ContractService ContractService
+
+@rendermode InteractiveServer
+
+<PageTitle>Contract Onboarding</PageTitle>
+
+<div class="main-container">
+
+    <img src="/images/logo_axpo.svg" alt="Logo" class="logo-img " />
+
+    
+    <header class="page-header" >
+
+        <h1 class="typo-header main-title">Contract Onboarding </h1>
+
+    </header>
+
+    <section>
+        <h2 class="typo-section-title section-header">
+            Contract Summary
+        </h2>
+
+        <div class="flex-layout">
+            <!-- Si la lista es null, muestra mensaje -->
+            @if (Contracts == null)
+            {
+                <p class="loading-message">Cargando contratos...</p>
+            }
+            else
+            {
+                <!-- Genera un acordeón por cada contrato en la lista -->
+                foreach (var contract in Contracts)
+                {
+                    <div class="flex-item">
+                        <Accordion Title="Overview">
+                            
+                            <ContractDetails Contract="@contract" />
+                        </Accordion>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+</div>
+
+@code {
+    private List<Contract>? Contracts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulación para obtener los datos
+        Contracts = await ContractService.GetContractsAsync();
+    }
+}
