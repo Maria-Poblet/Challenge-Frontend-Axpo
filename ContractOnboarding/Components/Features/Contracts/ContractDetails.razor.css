@@ -24,14 +24,14 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     
-    /* Manejo de textos largos */
+    /* ellipsis */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
 }
 
-/* Media Query para Tablet y Desktop */
+/* Media Query: Tablet & Desktop */
 @media (min-width: 768px) {
     .field {
         flex: 0 0 calc(50% - 12px);
