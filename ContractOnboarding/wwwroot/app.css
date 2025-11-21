@@ -80,7 +80,7 @@ html, body {
     }
 }
 
-/* animación a los items flexibles */
+/* flex item animation */
 .flex-item {
     opacity: 0;
     animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
