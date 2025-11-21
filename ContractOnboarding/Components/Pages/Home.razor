@@ -22,14 +22,14 @@
         </h2>
 
         <div class="flex-layout">
-            <!-- Si la lista es null, muestra mensaje -->
+            <!-- If the list is null, show message -->
             @if (Contracts == null)
             {
                 <p class="loading-message">Cargando contratos...</p>
             }
             else
             {
-                <!-- Genera un acordeón por cada contrato en la lista -->
+                <!-- Generate an accordion for each contract in the list -->
                 foreach (var contract in Contracts)
                 {
                     <div class="flex-item">
@@ -49,7 +49,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // Simulación para obtener los datos
+        // Data simulation
         Contracts = await ContractService.GetContractsAsync();
     }
 }
