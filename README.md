@@ -6,7 +6,7 @@ Prerequisites: Ensure you have the .NET 8 SDK installed.
 
 Open a terminal in the project's root folder.
 
-🏗️ Architecture and Structure
+Architecture and Structure
 The project follows a "Feature-First" architecture and clean design principles:
 
 /Components/UI: Reusable visual components agnostic to the business (e.g., Accordion).
