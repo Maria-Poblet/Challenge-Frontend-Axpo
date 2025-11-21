@@ -2,7 +2,7 @@
 @namespace ContractOnboarding.Components.Features.Contracts
 
 <div class="details-flex">
-    <!-- Campo: Contract Type (Marcado como importanto) -->
+    <!-- Field: Contract Type (highlighted) -->
     <div class="field">
         <label class="typo-body-bold">Contract Type</label>
         <div class="badge-container">
@@ -12,13 +12,13 @@
         </div>
     </div>
 
-    <!-- Campo: Commodity -->
+    <!-- Field: Commodity -->
     <div class="field">
         <label class="typo-body-bold">Commodity</label>
         <span class="typo-body-reg">@Contract.Commodity</span>
     </div>
 
-    <!-- Campo: Country (Icono) -->
+    <!-- Field: Country (Icon) -->
     <div class="field">
         <label class="typo-body-bold">Country</label>
         <div style="display:flex; align-items:center; gap:8px;">
@@ -31,13 +31,13 @@
         </div>
     </div>
 
-    <!-- Campo: Signature Date -->
+    <!-- Field: Signature Date -->
     <div class="field">
         <label class="typo-body-bold">Signature Date</label>
         <span class="typo-body-reg">@Contract.SignatureDate.ToString("dd/MM/yyyy")</span>
     </div>
 
-    <!-- Campo: Period -->
+    <!-- Field: Period -->
     <div class="field full-width">
         <label class="typo-body-bold">Period</label>
         <span class="typo-body-reg">@Contract.GetFormattedPeriod()</span>
