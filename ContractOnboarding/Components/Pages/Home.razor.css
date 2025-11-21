@@ -12,37 +12,33 @@
     background: var(--primary-surface); 
     padding: 48px 40px;
     margin-bottom: 48px;
-    position: relative; /* Necesario para los efectos */
+    position: relative; /* Necesary for effects */
     overflow: hidden; 
     border-radius: 8px;
 }
 
-/* Subtítulo */
+/* Subtitle */
 .section-header {
     padding: 10px 24px;
 }
 
-/*mensaje de carga */
 .loading-message {
     color: var(--text-primary);
     font-style: italic;
 }
 
 
-/* Título principal con animación de entrada */
+/* Title animation */
 .main-title {
     margin: 0;
-    
-    /* Empieza invisible y desplazado */
     opacity: 0;
     transform: translateY(10px);
     
-    /* Animación */
     animation: fadeInUpTitle 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     animation-delay: 0.2s; 
 }
 
-/* línea decorativa */
+/* Decorative Gradient  */
 .page-header::after {
     content: '';
     position: absolute;
@@ -50,18 +46,16 @@
     left: 0;
     width: 100%;
     height: 3px; 
-
-    /* Degradado corporativo */
     background: var(--gradient-jazzy);
     
-    /* Animación */
+    /* Gradient Animation */
     transform: scaleX(0); 
     transform-origin: left; 
     animation: growLine 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 
 
-/* Animación */
+/* Animation */
 @keyframes fadeInUpTitle {
     to {
         opacity: 1;
