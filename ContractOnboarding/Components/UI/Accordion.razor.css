@@ -5,18 +5,18 @@
     overflow: hidden;
     border-radius: 8px; 
     
-    /* Transiciones suaves */
+    /* Smooth Transitions */
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
 }
 
-/* EFECTO HOVER */
+/* Hover Effect */
 .accordion-item:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
     transform: translateY(-3px); 
 }
 
-/* Cabecera */
+/* Header */
 .accordion-header {
     width: 100%;
     display: flex;
@@ -29,12 +29,12 @@
     transition: background-color 0.2s;
 }
 
-/* Hover Cabecera acordeón */
+/* HEader Accordion */
 .accordion-header:hover {
     background-color: #fcfcfc;
 }
 
-/* Icono de flecha */
+/* Icon */
 .chevron {
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Efecto rebote "bouncy" */
     stroke: var(--accent-imp);
@@ -44,7 +44,7 @@
     transform: rotate(180deg);
 }
 
-/* Contenido */
+/* Content */
 .accordion-content {
     background-color: var(--primary-surface);
     border-top: 1px solid var(--border-color); 
